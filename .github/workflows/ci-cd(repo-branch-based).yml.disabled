@@ -38,7 +38,7 @@ jobs:
     runs-on: ubuntu-latest
     environment: RENDER_STAGING_HOOK
     steps:
-      - run: curl -X POST ${{ secrets.RENDER_STAGING_HOOK_IMAGE_BASED }}
+      - run: curl -X POST ${{ secrets.RENDER_STAGING_HOOK }}
 
   deploy-prod:
     needs: ci
@@ -46,4 +46,4 @@ jobs:
     runs-on: ubuntu-latest
     environment: RENDER_PROD_HOOK
     steps:
-      - run: curl -X POST ${{ secrets.RENDER_PROD_HOOK_IMAGE_BASED }}
+      - run: curl -X POST ${{ secrets.RENDER_PROD_HOOK }}
